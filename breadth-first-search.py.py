@@ -44,13 +44,13 @@ distances={
  'Eforie':(86,),
 }
 
-def nosso_in(elemento,L):
-    presente = False
+def our_in(element,L):
+    contains = False
     for i in range(len(L)):
-        if elemento == L[i][0][-1]:
-            presente = True
+        if element == L[i][0][-1]:
+            contains = True
             break
-    return presente
+    return contains
 
 def objective(state):
     return state=='Bucareste'
@@ -74,7 +74,7 @@ while not foundIt:
   E.append(node[0][-1])
   
   for neighbor in neighbors[node[0][-1]]:
-      if not nosso_in(neighbor,B) and not neighbor in E:
+      if not our_in(neighbor,B) and not neighbor in E:
           e = neighbors[node[0][-1]].index(neighbor)
           d = distances[node[0][-1]][e]  
           if objective(neighbor):
